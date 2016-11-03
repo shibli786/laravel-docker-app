@@ -1,0 +1,19 @@
+web:
+ build: .
+ container_name: laravel_container
+ volumes:
+  - .:/var/www/html/app
+ ports:
+    - "8000:8000"
+ links:
+  - mysql
+mysql:
+ image: mysql:latest
+ container_name: mysql_laravel
+ ports:
+ - "3306:3306"
+ environment:
+    MYSQL_ROOT_PASSWORD: hrhk
+    MYSQL_USER: root
+    MYSQL_PASSWORD: hrhk
+    MYSQL_DATABASE: laravel_db
