@@ -4,7 +4,7 @@ web:
  volumes:
   - .:/var/www/html/app
  ports:
-    - "8000:8000"
+    - "80:8000"
  links:
   - mysql
 mysql:
